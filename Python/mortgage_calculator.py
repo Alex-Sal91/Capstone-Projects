@@ -19,15 +19,15 @@ def mortgage_calculator():
         annual_int_rate += 0.125
         mortgage_life += 25
     elif salary > 45000 and salary <= 64999 and mortgage_amount > 50000:
-        annual_int_rate += 0.10
+        annual_int_rate += 0.1
         mortgage_life += 20
     else:
-        annual_int_rate += 0.06
+        annual_int_rate += 6
         mortgage_life += 15
 
     r = float(annual_int_rate/12)
     n = mortgage_life * 12
-    mnth_paym = mortgage_amount * (r(1 + r)**n/(1 + r)**n - 1)
+    mnth_paym = mortgage_amount * ((r * (1 + r)**n)/((1 + r)**n - 1))
     print("Monthly payments for the next {} months will be {}".format(n, mnth_paym))
 
 
